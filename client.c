@@ -323,14 +323,14 @@ client_main(struct event_base *base, int argc, char **argv, uint64_t flags,
 		fatal("pledge failed");
 
 	/* Load terminfo entry if any. */
-	if (isatty(STDIN_FILENO) &&
+	/*if (isatty(STDIN_FILENO) &&
 	    *termname != '\0' &&
 	    tty_term_read_list(termname, STDIN_FILENO, &caps, &ncaps,
 	    &cause) != 0) {
 		fprintf(stderr, "%s\n", cause);
 		free(cause);
 		return (1);
-	}
+	}*/
 
 	/* Free stuff that is not used in the client. */
 	if (ptm_fd != -1)
@@ -364,7 +364,7 @@ client_main(struct event_base *base, int argc, char **argv, uint64_t flags,
 	/* Send identify messages. */
 	client_send_identify(ttynam, termname, caps, ncaps, cwd, feat);
 	tty_term_free_list(caps, ncaps);
-	proc_flush_peer(client_peer);
+	//proc_flush_peer(client_peer);
 
 	/* Send first command. */
 	if (msg == MSG_COMMAND) {
@@ -388,11 +388,11 @@ client_main(struct event_base *base, int argc, char **argv, uint64_t flags,
 		size += sizeof *data;
 
 		/* Send the command. */
-		if (proc_send(client_peer, msg, -1, data, size) != 0) {
+		/*if (proc_send(client_peer, msg, -1, data, size) != 0) {
 			fprintf(stderr, "failed to send command\n");
 			free(data);
 			return (1);
-		}
+		}*/
 		free(data);
 	} else if (msg == MSG_SHELL)
 		proc_send(client_peer, msg, -1, NULL, 0);
