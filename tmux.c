@@ -476,18 +476,18 @@ main(int argc, char **argv)
 			flags |= CLIENT_UTF8;
 	}
 
-	/*
-	global_options = options_create(NULL);
+	
+	//global_options = options_create(NULL);
 	global_s_options = options_create(NULL);
-	global_w_options = options_create(NULL);
+	//global_w_options = options_create(NULL);
 	for (oe = options_table; oe->name != NULL; oe++) {
-		if (oe->scope & OPTIONS_TABLE_SERVER)
-			options_default(global_options, oe);
+		/*if (oe->scope & OPTIONS_TABLE_SERVER)
+			options_default(global_options, oe);*/
 		if (oe->scope & OPTIONS_TABLE_SESSION)
 			options_default(global_s_options, oe);
-		if (oe->scope & OPTIONS_TABLE_WINDOW)
-			options_default(global_w_options, oe);
-	}*/
+		/*if (oe->scope & OPTIONS_TABLE_WINDOW)
+			options_default(global_w_options, oe);*/
+	}
 
 	/*
 	 * The default shell comes from SHELL or from the user's passwd entry
