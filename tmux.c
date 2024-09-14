@@ -482,7 +482,7 @@ main(int argc, char **argv)
 	global_w_options = options_create(NULL);
 	for (oe = options_table; oe->name != NULL; oe++) {
 		if (oe->scope & OPTIONS_TABLE_SERVER)
-			options_default(global_options, oe);*/
+			options_default(global_options, oe);
 		if (oe->scope & OPTIONS_TABLE_SESSION)
 			options_default(global_s_options, oe);
 		if (oe->scope & OPTIONS_TABLE_WINDOW)
