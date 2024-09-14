@@ -335,9 +335,9 @@ client_main(struct event_base *base, int argc, char **argv, uint64_t flags,
 	/* Free stuff that is not used in the client. */
 	if (ptm_fd != -1)
 		close(ptm_fd);
-	options_free(global_options);
+	//options_free(global_options);
 	options_free(global_s_options);
-	options_free(global_w_options);
+	//options_free(global_w_options);
 	environ_free(global_environ);
 
 	/* Set up control mode. */
