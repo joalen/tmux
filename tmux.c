@@ -476,6 +476,7 @@ main(int argc, char **argv)
 			flags |= CLIENT_UTF8;
 	}
 
+	/*
 	global_options = options_create(NULL);
 	global_s_options = options_create(NULL);
 	global_w_options = options_create(NULL);
@@ -486,7 +487,7 @@ main(int argc, char **argv)
 			options_default(global_s_options, oe);
 		if (oe->scope & OPTIONS_TABLE_WINDOW)
 			options_default(global_w_options, oe);
-	}
+	}*/
 
 	/*
 	 * The default shell comes from SHELL or from the user's passwd entry
